@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="smartmage_tab" translate="label" sortOrder="10">
+            <label>Smartmage</label>
+        </tab>
+        <section id="smartmage_section" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Smartmage</label>
+            <tab>smartmage_tab</tab>
+            <resource>Smartmage_Adminmenu::products_config</resource>
+            <group id="general_1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Product Configuration</label>
+                <field id="quantity_product" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Quantity of product</label>
+                    <validate>required-entry no-whitespace validate-digits</validate>
+                </field>
+                <field id="price" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Product Price</label>
+                    <comment>This text will display on the frontend.</comment>
+                    <validate>required-entry no-whitespace validate-currency-dollar</validate>
+                </field>
+                <field id="image" translate="label" type="image" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Image</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+                <field id="image_alt_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Alt text</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+                <field id="image_title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Image Title</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+            </group>
+        </section>
+
+        <section id="meta_section" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Meta</label>
+            <tab>smartmage_tab</tab>
+            <resource>Smartmage_Adminmenu::products_config_meta</resource>
+            <group id="general_2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Meta Configuration</label>
+                <field id="meta_title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Meta Title</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+                <field id="meta_description" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Meta Description</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+                <field id="meta_robots" translate="label" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Meta Robots</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
