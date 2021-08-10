@@ -1,43 +1,49 @@
 <?php
 namespace Smartmage\Adminmenu\Block;
 
-use Magento\Framework\View\Element\Template;
+
 use Magento\Framework\View\Element\Template\Context;
 use Smartmage\Adminmenu\Helper\Data;
-
 use Magento\Framework\App\Config\ScopeConfigInterface;
+
 
 class ImageConf extends \Magento\Framework\View\Element\Template
 {           
-    protected array $new_data = [];
     public function __construct(
-        \Magento\Backend\Block\Template\Context $context,
-        Data $helper,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,       
-        array $data = []
+        Context $context,
+        Data $helper
     )
     {        
         $this->helper = $helper;
-        $this->scopeConfig = $scopeConfig;
-        parent::__construct($context, $data);
+        parent::__construct($context);
     }
     
+    // const QUANTITY_PRODUCT          = 'smartmage_section/general_1/quantity_product'
+    // const PRICE                     = 'smartmage_section/general_1/price'
+    // const IMAGE                     = 'smartmage_section/general_1/image'
+    // const IMAGE_ALT_TEXT            = 'smartmage_section/general_1/image_alt_text'
+    // const IMAGE_TITLE               = 'smartmage_section/general_1/image_title'
 
     public function getmyData()
     {   
+        $quantity_product =     $this->helper->getConfigValue('smartmage_section/general_1/quantity_product');
+        $price =                $this->helper->getConfigValue('smartmage_section/general_1/price');
+        $image =                $this->helper->getConfigValue('smartmage_section/general_1/image');
+        $image_alt_text =       $this->helper->getConfigValue('smartmage_section/general_1/image_alt_text');
+        $image_title =          $this->helper->getConfigValue('smartmage_section/general_1/image_title');
         
-        // $val1 = $this->helper->GetQuantity();
-        // $this->new_data[] = $val1;
-        // $val2 = $this->helper->GetPrice();
-        // $this->new_data[] = $val2;
-        // $val3 = $this->helper->GetImage();
-        // $this->new_data[] = $val3;
-        // $val4 = $this->helper->GetImageAlt();
-        // $this->new_data[] = $val4;
-        // $val5 = $this->helper->GetImageTitle();
-        // $this->new_data[] = $val5;
 
-        // return $this->new_data;
+        return [
+            "quantity_product"  => $quantity_product,
+            "price"             => $price,
+            "image"             => $image,
+            "image_alt_text"    => $image_alt_text,
+            "image_title"       => $image_title,
+        ];
     }   
+    public function sayHello()
+	{
+		return __('Hello World');
+	}
  
 }
