@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <referenceBlock name="page.title">
-        <action method="setPageTitle">
-            <argument name="title" xsi:type="string">PPT</argument>
-        </action>
-    </referenceBlock>
+    <head>
+        <css src="Smartmage_Adminmenu::css/grid.css"/>
+        <script src="Smartmage_Adminmenu::js/grid.js"/>
+        <!-- <<referenceContainer name="head.additional">
+            <block name="metaTags" class="Smartmage\Adminmenu\Block\TagsConf" /> 
+        </<referenceContainer> -->
+    </head>
     <body>
+  
         <referenceBlock name="content">
-            <block class="Smartmage\Adminmenu\Block\imageConf" name="" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/>
+            <block class="Smartmage\Adminmenu\Block\ImageConf" name="imageConf" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/>
             <!-- <block class = "Smartmage\Adminmenu\Block\Helloworld" name = "some.name" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/> -->
         </referenceBlock>
     </body>

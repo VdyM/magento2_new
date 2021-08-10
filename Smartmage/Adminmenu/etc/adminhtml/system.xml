@@ -22,6 +22,8 @@
                 </field>
                 <field id="image" translate="label" type="image" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Image</label>
+                    <backend_model>Smartmage\Adminmenu\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">image</base_url>
                     <comment>This text will display on the frontend.</comment>
                 </field>
                 <field id="image_alt_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
