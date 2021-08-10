@@ -1,6 +1,6 @@
 <?php
-namespace Smartmage\Adminmenu\Controller\Page;
 
+namespace Smartmage\Adminmenu\Controller\Page;
 
 class Index extends \Magento\Framework\App\Action\Action
 {

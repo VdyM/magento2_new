@@ -31,20 +31,19 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         \Magento\Framework\App\Helper\Context $context,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
     ) {
-        parent::__construct($context);
-            
+        parent::__construct($context);   
     }
 
-    public function GetQuantity()
+    public function getQuantity()
     {
         $Quantity = $this->scopeConfig->getValue(self::QUANTITY_PRODUCT, 
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
- 
+        
         return $Quantity;
     }
 
-    public function GetPrice()
+    public function getPrice()
     {
         $Price = $this->scopeConfig->getValue(self::PRICE, 
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
@@ -53,30 +52,30 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         return $Price;
     }
 
-    public function GetImage()
+    public function getImage()
     {
-        $image = $this->scopeConfig->getValue(self::IMAGE, 
+        $Image = $this->scopeConfig->getValue(self::IMAGE, 
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
  
-        return $image;
+        return $Image;
     }
 
-    public function GetImageAlt()
+    public function getImageAlt()
     {
-        $imageAlt = $this->scopeConfig->getValue(self::IMAGE_ALT_TEXT, 
+        $ImageAlt = $this->scopeConfig->getValue(self::IMAGE_ALT_TEXT, 
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
  
-        return $imageAlt;
+        return $ImageAlt;
     }
     
-    public function GetImageTitle()
+    public function getImageTitle()
     {
-        $imageTitle = $this->scopeConfig->getValue(self::IMAGE_TITLE, 
+        $ImageTitle = $this->scopeConfig->getValue(self::IMAGE_TITLE, 
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
  
-        return $imageTitle;
+        return $ImageTitle;
     }
 }
