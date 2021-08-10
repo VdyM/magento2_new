@@ -10,7 +10,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      * Admin configuration paths
      *
      */
-                                    // 'smartmage_section/general_1/quantity_product'
+
     const QUANTITY_PRODUCT          = 'smartmage_section/general_1/quantity_product';
     const PRICE                     = 'smartmage_section/general_1/price';
     const IMAGE                     = 'smartmage_section/general_1/image';
@@ -41,8 +41,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
  
-        return $Price;
+        return $Quantity;
     }
+
     public function GetPrice()
     {
         $Price = $this->scopeConfig->getValue(self::PRICE, 
@@ -51,6 +52,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
  
         return $Price;
     }
+
     public function GetImage()
     {
         $image = $this->scopeConfig->getValue(self::IMAGE, 
@@ -59,6 +61,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
  
         return $image;
     }
+
     public function GetImageAlt()
     {
         $imageAlt = $this->scopeConfig->getValue(self::IMAGE_ALT_TEXT, 
@@ -67,6 +70,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
  
         return $imageAlt;
     }
+    
     public function GetImageTitle()
     {
         $imageTitle = $this->scopeConfig->getValue(self::IMAGE_TITLE, 

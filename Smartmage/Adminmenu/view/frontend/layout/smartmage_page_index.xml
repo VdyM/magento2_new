@@ -6,8 +6,9 @@
         </action>
     </referenceBlock>
     <body>
-        <referenceContainer name="content">
-            <block class="Magento\Backend\Block\Template" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/>
-        </referenceContainer>
+        <referenceBlock name="content">
+            <block class="Magento\Framework\View\Element\Template" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/>
+            <block class = "Smartmage\Adminmenu\Block\Helloworld" name = "some.name" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/>
+        </referenceBlock>
     </body>
 </page>

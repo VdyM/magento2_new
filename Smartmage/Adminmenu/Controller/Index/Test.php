@@ -10,7 +10,7 @@ class Test extends \Magento\Framework\App\Action\Action
 
 	public function __construct(
 		\Magento\Framework\App\Action\Context $context,
-        // Smartmage\Adminmenu\Helper\Data $helper,
+        // Data $helper,
 		\Magento\Framework\View\Result\PageFactory $pageFactory)
 	{
         // $this->helper = $helper;

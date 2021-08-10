@@ -4,9 +4,10 @@ namespace Smartmage\Adminmenu\Block;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 use Smartmage\Adminmenu\Helper\Data;
+
 use Magento\Framework\App\Config\ScopeConfigInterface;
 
-class Helloworld extends \Magento\Framework\View\Element\Template
+class ImageConf extends \Magento\Framework\View\Element\Template
 {           
     protected array $new_data = [];
     public function __construct(
@@ -35,6 +36,7 @@ class Helloworld extends \Magento\Framework\View\Element\Template
         $this->new_data[] = $val4;
         $val5 = $this->helper->GetImageTitle();
         $this->new_data[] = $val5;
+
         return $this->new_data;
     }   
  
