@@ -18,9 +18,7 @@ class Index extends \Magento\Framework\App\Action\Action
 	public function execute()
 	{
         $result = $this->_pageFactory->create();
-        $result->getConfig()->getTitle()->set("Meta Title"); //setting the page
-        $result->getConfig()->setDescription("Description"); // set meta description
-        $result->getConfig()->setKeywords("Key Words"); // set meta keyword
+        
         return $result;
 	}
 }

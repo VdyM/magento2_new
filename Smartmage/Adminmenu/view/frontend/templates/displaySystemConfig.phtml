@@ -2,7 +2,9 @@
 <?php 
 
 echo 'Ouuuuuwuwuwowo';
-// echo $this->getmyData()['price'];
-print_r($this);
+echo $block->getmyData()['image'];
+// echo var_dump($block->getmyData()['price']);
+echo $block->sayHello();
 ?>
-<img>
+<img src= "https://www.w3schools.com/images/lamp.jpg">
+<img src= "/<?php echo $block->getmyData()['image']; ?>">

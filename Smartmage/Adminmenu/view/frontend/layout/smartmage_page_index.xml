@@ -6,9 +6,12 @@
         </action>
     </referenceBlock>
     <body>
-        <referenceBlock name="content">
-            <block class="Smartmage\Adminmenu\Block\imageConf" name="" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/>
-            <!-- <block class = "Smartmage\Adminmenu\Block\Helloworld" name = "some.name" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/> -->
+        <referenceBlock name="head.additional">
+            <block name="metatags" class="Smartmage\Adminmenu\Block\TagsConf" template="Smartmage_Adminmenu::metatags.phtml"/> 
         </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Smartmage\Adminmenu\Block\ImageConf" name="nime" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/>
+            <!-- <block class = "Smartmage\Adminmenu\Block\Helloworld" name = "some.name" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/> -->
+        </referenceContainer>
     </body>
 </page>

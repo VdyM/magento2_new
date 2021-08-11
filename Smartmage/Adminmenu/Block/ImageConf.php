@@ -4,7 +4,6 @@ namespace Smartmage\Adminmenu\Block;
 
 use Magento\Framework\View\Element\Template\Context;
 use Smartmage\Adminmenu\Helper\Data;
-use Magento\Framework\App\Config\ScopeConfigInterface;
 
 
 class ImageConf extends \Magento\Framework\View\Element\Template
@@ -24,7 +23,7 @@ class ImageConf extends \Magento\Framework\View\Element\Template
     // const IMAGE_ALT_TEXT            = 'smartmage_section/general_1/image_alt_text'
     // const IMAGE_TITLE               = 'smartmage_section/general_1/image_title'
 
-    public function getmyData()
+    public function getProductData()
     {   
         $quantity_product =     $this->helper->getConfigValue('smartmage_section/general_1/quantity_product');
         $price =                $this->helper->getConfigValue('smartmage_section/general_1/price');
@@ -40,10 +39,12 @@ class ImageConf extends \Magento\Framework\View\Element\Template
             "image_alt_text"    => $image_alt_text,
             "image_title"       => $image_title,
         ];
-    }   
+    }  
+
     public function sayHello()
 	{
 		return __('Hello World');
 	}
- 
+
+   
 }

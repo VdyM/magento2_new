@@ -2,28 +2,24 @@
 
 namespace Smartmage\Adminmenu\Helper;
 
-use Magento\Store\Model\ScopeInterface;
 
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
-
+    protected $scopeConfig;
     /**
      * Data constructor
      * @param \Magento\Framework\App\Helper\Context $context
      */
-    public function __construct(
-        \Magento\Framework\App\Helper\Context $context
-    ) 
+
+    public function __construct(\Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig)
     {
-        parent::__construct($context);   
+       $this->scopeConfig = $scopeConfig;
     }
 
     public function getConfigValue($field)	
     {
 		return $this->scopeConfig->getValue(
-			$field, ScopeInterface::SCOPE_STORE
+			$field, \Magento\Store\Model\ScopeInterface::SCOPE_STORE
 		);
 	}
-
-
-    
+}
