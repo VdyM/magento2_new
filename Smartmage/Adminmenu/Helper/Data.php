@@ -22,10 +22,4 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 			$field, \Magento\Store\Model\ScopeInterface::SCOPE_STORE
 		);
 	}
-<<<<<<< HEAD
 }
-=======
-
-}
-    
->>>>>>> 89c9147f7c369696c774a9dbb9a23a4d8e06c8d9

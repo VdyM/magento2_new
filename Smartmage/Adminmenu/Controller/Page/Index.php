@@ -18,10 +18,7 @@ class Index extends \Magento\Framework\App\Action\Action
 	public function execute()
 	{
         $result = $this->_pageFactory->create();
-<<<<<<< HEAD
         
-=======
->>>>>>> 89c9147f7c369696c774a9dbb9a23a4d8e06c8d9
         return $result;
 	}
 }

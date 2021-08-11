@@ -4,10 +4,7 @@ namespace Smartmage\Adminmenu\Block;
 
 use Magento\Framework\View\Element\Template\Context;
 use Smartmage\Adminmenu\Helper\Data;
-<<<<<<< HEAD
-=======
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
->>>>>>> 89c9147f7c369696c774a9dbb9a23a4d8e06c8d9
 
 
 class ImageConf extends \Magento\Framework\View\Element\Template
@@ -48,17 +45,7 @@ class ImageConf extends \Magento\Framework\View\Element\Template
             "image_alt_text"    => $image_alt_text,
             "image_title"       => $image_title,
         ];
-<<<<<<< HEAD
     }  
-
-    public function sayHello()
-	{
-		return __('Hello World');
-	}
-
-   
-=======
-    }    
 
     public function getMeta()
     { 
@@ -86,5 +73,4 @@ class ImageConf extends \Magento\Framework\View\Element\Template
         }
 
     }
->>>>>>> 89c9147f7c369696c774a9dbb9a23a4d8e06c8d9
 }
