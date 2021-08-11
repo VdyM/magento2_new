@@ -21,6 +21,10 @@
                     <comment>This text will display on the frontend.</comment>
                     <validate>required-entry no-whitespace validate-currency-dollar</validate>
                 </field>
+                <field id="quantity_limit" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Limit</label>
+                    <validate>required-entry no-whitespace validate-digits</validate>
+                </field>
                 <field id="image" translate="label" type="image" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Image</label>
                     <backend_model>Smartmage\Adminmenu\Model\Config\Backend\Image</backend_model>

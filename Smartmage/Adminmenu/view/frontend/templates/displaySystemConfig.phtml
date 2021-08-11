@@ -1,8 +1,7 @@
 <p>Hello SystemConfig</p>
 <?php 
 echo 'Ouuuuuwuwu1234wowo';
-// echo $block->getmyData()['price'];
-// print_r($this);
+
 $imageData = $block->getProductData();
 echo "<p>QUANTITY_PRODUCT:" . $imageData["quantity_product"] . "</p>";
 echo "<p>PRICE:" . $imageData["price"] . "</p>";
@@ -15,6 +14,13 @@ $metatags = $block->getMeta();
 echo "<p>meta_title:" . $metatags["meta_title"] . "</p>";
 echo "<p>meta_robots:" . $metatags["meta_robots"] . "</p>";
 echo "<p>meta_description:" . $metatags["meta_description"] . "</p>";
+
 $imgurl = $block->getUrl("media/image/") . $imageData["image"];
 echo "<img title=\"".$imageData["image_title"]."\" src=\"".$imgurl."\" alt=\"".$imageData["image_alt_text"]."\"/>";
+
+echo "</br></br>";
+$productCollection = $block->getProductCollection();
+// echo $productCollection->getSelect();
+
+
 ?>

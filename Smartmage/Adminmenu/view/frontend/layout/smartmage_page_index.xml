@@ -3,17 +3,10 @@
     <head>
         <css src="Smartmage_Adminmenu::css/grid.css"/>
         <script src="Smartmage_Adminmenu::js/grid.js"/>
-        <!-- <<referenceContainer name="head.additional">
-            <block name="metaTags" class="Smartmage\Adminmenu\Block\TagsConf" /> 
-        </<referenceContainer> -->
     </head>
     <body>
-        <!-- <referenceBlock name="head.additional">
-            <block name="metatags" class="Smartmage\Adminmenu\Block\TagsConf" template="Smartmage_Adminmenu::metatags.phtml"/> 
-        </referenceBlock> -->
         <referenceContainer name="content">
             <block class="Smartmage\Adminmenu\Block\ImageConf" name="nime" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/>
-            <!-- <block class = "Smartmage\Adminmenu\Block\Helloworld" name = "some.name" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/> -->
         </referenceContainer>
     </body>
 </page>
