@@ -1,6 +1,16 @@
 <p>Hello SystemConfig</p>
 <?php 
+echo 'Ouuuuuwuwu1234wowo';
+// echo $block->getmyData()['price'];
+// print_r($this);
+$imageData = $block->getmyData();
+echo "<p>QUANTITY_PRODUCT:" . $imageData["quantity_product"] . "</p>";
+echo "<p>PRICE:" . $imageData["price"] . "</p>";
+echo "<p>IMAGE:" . $imageData["image"] . "</p>";
+echo "<p>IMAGE_ALT_TEXT:" . $imageData["image_alt_text"] . "</p>";
+echo "<p>IMAGE_TITLE:" . $imageData["image_title"] . "</p>";
 
+<<<<<<< HEAD
 echo 'Ouuuuuwuwuwowo';
 echo $block->getmyData()['image'];
 // echo var_dump($block->getmyData()['price']);
@@ -8,3 +18,13 @@ echo $block->sayHello();
 ?>
 <img src= "https://www.w3schools.com/images/lamp.jpg">
 <img src= "/<?php echo $block->getmyData()['image']; ?>">
+=======
+$metatags = $block->getMeta();
+
+echo "<p>meta_title:" . $metatags["meta_title"] . "</p>";
+echo "<p>meta_robots:" . $metatags["meta_robots"] . "</p>";
+echo "<p>meta_description:" . $metatags["meta_description"] . "</p>";
+$imgurl = $block->getUrl("media/image/") . $imageData["image"];
+echo "<img title=\"".$imageData["image_title"]."\" src=\"".$imgurl."\" alt=\"".$imageData["image_alt_text"]."\"/>";
+?>
+>>>>>>> 89c9147f7c369696c774a9dbb9a23a4d8e06c8d9

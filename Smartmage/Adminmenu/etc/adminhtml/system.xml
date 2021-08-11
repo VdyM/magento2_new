@@ -24,8 +24,12 @@
                 <field id="image" translate="label" type="image" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Image</label>
                     <backend_model>Smartmage\Adminmenu\Model\Config\Backend\Image</backend_model>
+<<<<<<< HEAD
                     <!-- <base_url type="media" scope_info="1">my_image_folder</base_url> -->
                     <upload_dir config="system" scope_info="1">my_image_folder</upload_dir>
+=======
+                    <base_url type="media" scope_info="1">image</base_url>
+>>>>>>> 89c9147f7c369696c774a9dbb9a23a4d8e06c8d9
                     <comment>This text will display on the frontend.</comment>
                 </field>
                 <field id="image_alt_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">

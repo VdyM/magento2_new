@@ -17,10 +17,10 @@ class ListMode implements OptionSourceInterface
     {
         return [
             ['value' => '', 'label' => __('-- Select an Option --')],
-            ['value' => 'INDEX, FOLLOW', 'label' => __('INDEX, FOLLOW')],
-            ['value' => 'INDEX, NOFOLLOW', 'label' => __('INDEX, NOFOLLOW')],
-            ['value' => 'NOINDEX, FOLLOW', 'label' => __('NOINDEX, FOLLOW')],
-            ['value' => 'NOINDEX, NOFOLLOW', 'label' => __('NOINDEX, NOFOLLOW')]
+            ['value' => 'index, follow', 'label' => __('INDEX, FOLLOW')],
+            ['value' => 'index, nofollow', 'label' => __('INDEX, NOFOLLOW')],
+            ['value' => 'noindex, follow', 'label' => __('NOINDEX, FOLLOW')],
+            ['value' => 'noindex, nofollow', 'label' => __('NOINDEX, NOFOLLOW')]
         ];
     }
 }
