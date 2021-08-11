@@ -1,0 +1,12 @@
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+        <!-- < ... other tags ... > -->
+        <dataSource name="product_listing_data_source" component="Magento_Ui/js/grid/provider">
+                    <!-- < ... other sub tags ... > -->
+                    <dataProvider class="Magento\Catalog\Ui\DataProvider\Product\ProductDataProvider"                                           name="product_listing_data_source">
+                <settings>
+                        <requestFieldName>id</requestFieldName>
+                        <primaryFieldName>entity_id</primaryFieldName>
+                </settings>
+                    </dataProvider>
+        </dataSource>
+</listing>

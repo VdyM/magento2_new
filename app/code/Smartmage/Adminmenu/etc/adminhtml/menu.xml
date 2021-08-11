@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Smartmage_Adminmenu::menu" title="Smartmage" translate="title" module="Smartmage_Adminmenu" sortOrder="9999" resource="Magento_Backend::content"  />
+        
+        <add id="Smartmage_Adminmenu::helloworld" title="Helloworld" translate="title" module="Smartmage_Adminmenu" sortOrder="10" action="exampleadminnewpage/helloworld" resource="Smartmage_Adminmenu::helloworld" parent="Smartmage_Adminmenu::menu"/>
+        
+        <add id="Smartmage_Adminmenu::products" title="Products" translate="title" module="Smartmage_Adminmenu" sortOrder="10" action="smartmage/products" resource="Smartmage_Adminmenu::products" parent="Smartmage_Adminmenu::menu"/>
+    </menu>
+</config>
