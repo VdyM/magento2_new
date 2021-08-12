@@ -5,7 +5,10 @@
         <script src="Smartmage_Adminmenu::js/grid.js"/>
     </head>
     <body>
+        <!-- <referenceContainer name="page.top"> -->
+        <!-- </referenceContainer> -->
         <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="custom.content" before="page-header" template="Smartmage_Adminmenu::top.phtml" />
             <block class="Smartmage\Adminmenu\Block\ImageConf" name="nime" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/>
         </referenceContainer>
     </body>
