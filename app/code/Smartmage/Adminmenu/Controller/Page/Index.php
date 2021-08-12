@@ -23,11 +23,11 @@ class Index extends \Magento\Framework\App\Action\Action
 	public function execute()
 	{
         $result = $this->_pageFactory->create();
-        
+		
 		$meta_title = $this->helper->getConfigValue('meta_section/general_2/meta_title');
         $meta_robots = $this->helper->getConfigValue('meta_section/general_2/meta_robots');
         $meta_description = $this->helper->getConfigValue('meta_section/general_2/meta_description');
-
+		
 		$result->getConfig()->getTitle()->set(__($meta_title));
         $result->getConfig()->setRobots(__($meta_robots));
         $result->getConfig()->setDescription(__($meta_description));
