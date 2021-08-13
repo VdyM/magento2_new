@@ -5,9 +5,9 @@
         <css src="css/print.css" media="print" />
         <css  src="css/mystyle.css" />
     </head>
-    <!-- <body>
+    <body>
         <referenceContainer name="header.container" remove="true" />
         <referenceContainer name="navigation.sections" remove="true" />
         <referenceContainer name="footer" remove="true" />
-    </body> -->
+    </body>
 </page>

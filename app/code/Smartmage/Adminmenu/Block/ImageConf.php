@@ -15,12 +15,13 @@ class ImageConf extends \Magento\Framework\View\Element\Template
     public function __construct(
         Context $context,
         Data $helper,
-        CollectionFactory $collectionFactory
+        CollectionFactory $collectionFactory,
+        array $data = []
     )
     {        
         $this->helper = $helper;
         $this->collectionFactory = $collectionFactory;
-        parent::__construct($context);
+        parent::__construct($context, $data);
     }
     
     // const QUANTITY_PRODUCT          = 'smartmage_section/general_1/quantity_product'
