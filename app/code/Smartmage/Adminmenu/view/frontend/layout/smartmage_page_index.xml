@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"><!--  layout="empty" -->
     <head>
         <css src="Smartmage_Adminmenu::css/grid.css"/>
         <script src="Smartmage_Adminmenu::js/grid.js"/>
     </head>
     <body>
-        <!-- <referenceContainer name="page.top"> -->
-        <!-- </referenceContainer> -->
+        <!-- <referenceContainer name="page.top">
+                    <block class="Magento\Framework\View\Element\Template" name="custom.content" template="Smartmage_Adminmenu::top.phtml" />
+        </referenceContainer> -->
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" name="custom.content" before="page-header" template="Smartmage_Adminmenu::top.phtml" />
             <block class="Smartmage\Adminmenu\Block\ImageConf" name="nime" template="Smartmage_Adminmenu::displaySystemConfig.phtml"/>
         </referenceContainer>
     </body>
