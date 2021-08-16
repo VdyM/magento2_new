@@ -1,16 +1,116 @@
-.Raki-CT-Nuptse-EVO-Desktop {
-    width: 1440px;
-    height: 6343px;
-    flex-grow: 1;
+// @screen_desktop = 1440px;
+// @import "source/lib/_responsive.less";
+
+
+.Raki {
+    flex-grow: 0;
+    width: auto;
+    position: relative;
+    // height: 1592px;
     background-color: #601400;
 }
-.HeroCenter {
-    // width: 1440px;
-    // height: 1136px;
-    margin: 168px 0 0;
+.wrapper{
+    width: auto;
     padding: 0 80px;
 }
-// background: url('../images/5f87868349d4abe9782adb92_ct-nuptse-evo-hero-min.jpg'); praktyka02/app/design/frontend/Smartmage/MyTheme/web/images/5f87868349d4abe9782adb92_ct-nuptse-evo-hero-min.jpg
+
+.twocolumnsection {
+    display: grid;
+    // position: relative;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 40px;
+    max-width: 1312px;
+    grid-row-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.firstcolumn{
+    display: flex;
+    // height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.secondcolumn{
+    display: flex;
+    // height: 100%;
+    flex-direction: column;
+}
 
 
+.TextBoxTop {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px 56px 40px;
+}
 
+.TextBoxMiddle {
+    // height: 100%;
+    display: flex;
+    padding: 80px 40px 56px 40px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+h2 {
+    margin-bottom: 24px;
+    font-family: Panton,sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.P1 {
+    opacity: 0.7;
+    margin-bottom: 24px;
+    font-family: Roboto,sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+    position: static;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+.BigImage {
+    // position: relative;
+    display: flex;
+    height: 800px;
+    transform-origin: 50% 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+h3 {
+    margin-bottom: 16px;
+    font-family: Panton,sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 0.72px;
+    text-align: left;
+    color: #fff;
+}  
+
+.SmallImage {
+    // position: relative;
+    display: flex;
+    height: 564px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
