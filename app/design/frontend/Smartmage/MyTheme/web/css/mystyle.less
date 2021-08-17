@@ -1,53 +1,46 @@
-// @screen_desktop = 1440px;
-// @import "source/lib/_responsive.less";
+@import "source/variables/_responsive.less";
+@import "source/_responsive.less";
 
 
-.Raki {
+
+.Raki{
     flex-grow: 0;
     width: auto;
     position: relative;
-    // height: 1592px;
     background-color: #601400;
 }
 .wrapper{
     width: auto;
-    padding: 0 80px;
 }
 
-.twocolumnsection {
+.twocolumnsection{
     display: grid;
-    // position: relative;
+    position: relative;
     grid-auto-columns: 1fr;
     grid-column-gap: 40px;
     max-width: 1312px;
-    grid-row-gap: 40px;
-    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 0;
     grid-template-rows: auto;
 }
 
 .firstcolumn{
     display: flex;
-    // height: 100%;
     flex-direction: column;
     justify-content: flex-start;
 }
 .secondcolumn{
     display: flex;
-    // height: 100%;
     flex-direction: column;
 }
 
 
-.TextBoxTop {
+.TextBoxTop{
     display: flex;
     flex-direction: column;
-    padding: 0 40px 56px 40px;
 }
 
-.TextBoxMiddle {
-    // height: 100%;
+.TextBoxMiddle{
     display: flex;
-    padding: 80px 40px 56px 40px;
     flex-direction: column;
     justify-content: center;
   }
@@ -55,11 +48,9 @@
 h2 {
     margin-bottom: 24px;
     font-family: Panton,sans-serif;
-    font-size: 36px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.11;
     letter-spacing: normal;
     text-align: left;
     color: #fff;
@@ -69,48 +60,199 @@ h2 {
     opacity: 0.7;
     margin-bottom: 24px;
     font-family: Roboto,sans-serif;
-    font-size: 20px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.6;
     letter-spacing: normal;
     text-align: left;
     color: #fff;
 }
 
-img{
-    max-width: 100%;
-    object-fit: cover;
-    position: static;
-    height: 100%;
-    width: 100%;
-    vertical-align: middle;
-    display: inline-block;
-}
+
 .BigImage {
-    // position: relative;
     display: flex;
-    height: 800px;
-    transform-origin: 50% 100%;
     background-color: rgba(0, 0, 0, 0.2);
+    img {
+        max-width: 100%;
+        object-fit: cover;
+        position: static;
+        height: 100%;
+        width: 100%;
+        vertical-align: middle;
+        display: inline-block;
+    }
 }
 h3 {
     margin-bottom: 16px;
     font-family: Panton,sans-serif;
-    font-size: 24px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.33;
-    letter-spacing: 0.72px;
     text-align: left;
     color: #fff;
 }  
 
 .SmallImage {
-    // position: relative;
     display: flex;
-    height: 564px;
     background-color: rgba(0, 0, 0, 0.2);
+    img {
+        max-width: 100%;
+        object-fit: cover;
+        position: static;
+        height: 100%;
+        width: 100%;
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    
+    .wrapper{
+        padding: 0;
+    }
+    .TextBoxTop {
+        padding: 60px 32px 24px 31.5px;
+    }
+    .TextBoxMiddle {
+        padding: 48px 32px 24px 31px;
+    }
+    h2 {
+        font-size: 24px;
+        line-height: 1.33;
+    }
+    .P1 {
+        font-size: 18px;
+        line-height: 1.56;
+    }
+    h3 {
+        font-size: 20px;
+        line-height: 1.4;
+        letter-spacing: normal;
+    }
+    .BigImage {
+        height: 500px;
+    }
+    .SmallImage {
+        height: 400px;
+    }
+
+    .twocolumnsection{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .wrapper{
+        padding: 0 33px 0 32px;
+    }
+    .BigImage {
+        height: 600px;
+    }
+    .SmallImage {
+        height: 400px;
+    }
+    h2 {
+        font-size: 24px;
+        line-height: 1.33;
+    }
+    .P1 {
+        font-size: 18px;
+        line-height: 1.56;
+    }
+    h3 {
+        font-size: 20px;
+        line-height: 1.4;
+        letter-spacing: normal;
+    }
+    .TextBoxTop {
+        padding: 60px 31px 32px 32px;
+    }
+    .TextBoxMiddle {
+        padding: 56px 31.5px 32px 31.5px;
+    }
+
+    .twocolumnsection{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+//
+//  Tablet
+//  _____________________________________________
+
+// This will add styles for tablet devices. When using native media-queries, we recommend wrapping your media-queries with media-width Magento mixins or media-target
+& when (@media-target = 'desktop'), (@media-target = 'all') {
+    @media only screen and (min-width: @screen__m) and (max-width: (@screen__l - 1)) {
+        // styles for breakpoint >= 768px and < 1024px
+        .wrapper{
+            padding: 0 48px;
+        }
+        h2 {
+            font-size: 36px;
+            line-height: 1.11;
+        }
+        .P1 {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        h3 {
+            font-size: 24px;
+            line-height: 1.33;
+            letter-spacing: 0.72px;
+        }
+        .TextBoxTop {
+            padding: 120px 40px 56px 40px;
+        }
+        .TextBoxMiddle {
+            padding: 80px 40px 56px 40px;
+        }
+        .BigImage {
+            height: 928px;
+        }
+        .SmallImage {
+            height: 564px;
+        }
+    }
+}
+
+//
+//  Desktop (style-l.css)
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .wrapper{
+        padding: 0 80px;
+    }
+    .twocolumnsection {
+        grid-auto-columns: 1fr;
+        max-width: 1312px;
+        grid-column-gap: 40px;
+        grid-template-columns: 1fr 1fr;
+    }
+    h2 {
+        font-size: 36px;
+        line-height: 1.11;
+    }
+    .P1 {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    h3 {
+        font-size: 24px;
+        line-height: 1.33;
+        letter-spacing: 0.72px;
+    }
+    .TextBoxTop {
+        padding: 120px 40px 56px 40px;
+    }
+    .TextBoxMiddle {
+        padding: 80px 40px 56px 40px;
+    }
+    .BigImage {
+        height: 800px;
+    }
+    .SmallImage {
+        height: 564px;
+    }
 }
