@@ -103,6 +103,7 @@ class ImageConf extends \Magento\Framework\View\Element\Template
             echo "<p> Product Name: " . $product->getData('name') . "</p>";
             echo "<p> Product Price: " . number_format((float) $product->getPrice(), 2, '.', '') . "</p>";
             echo "<p> Product Description: " . $product->getDescription() . "</p>";
+            echo '<a href='.$product->getProductUrl()." target='_blank'>Product</a>";
             
         }
 
