@@ -1,0 +1,19 @@
+<a id="delivery_link" href='#'>Koszt dostawy</a>
+
+<div id="wrapper">
+    <div id="divModal" style="display: none;"> 
+        <div class="Oval">
+            <div class="Oval-content">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">   
+                    <path fill="#D4AF7E" d="M14.012 2.02L12.008.016 7 5.024 1.992.016-.012 2.02l5.008 5.008-5.008 5.009 2.004 2.004L7 9.032l5.008 5.009 2.004-2.004-5.008-5.009 5.008-5.008z"/>
+                </svg> 
+            </div>
+        </div>
+        <div id="modal-content">
+            <span class="Szanowny-kliencie">Szanowny kliencie,</span>
+            <span id="cms-block-content"><?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('delivery_cost_list')->toHtml();?></span>
+            <div class="BtnBg" id="confirm_it">POTWIERDZAM</div>
+            <span class="Anuluj">Anuluj</span>
+        </div>
+    </div>  
+</div>
