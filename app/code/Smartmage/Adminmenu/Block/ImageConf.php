@@ -38,7 +38,6 @@ class ImageConf extends \Magento\Framework\View\Element\Template
         $image_alt_text =       $this->helper->getConfigValue('smartmage_section/general_1/image_alt_text');
         $image_title =          $this->helper->getConfigValue('smartmage_section/general_1/image_title');
         
-
         return [
             "quantity_product"  => $quantity_product,
             "price"             => $price,
@@ -82,13 +81,9 @@ class ImageConf extends \Magento\Framework\View\Element\Template
 
         $collection->setPageSize($limit);
 
-
+        $productCollection = [];
         
         foreach ($collection as $product) {
-            // print_r($product->getData());
-            // echo "<img title=\"".$imageData["image_title"]."\" src=\"".$imgurl."\" alt=\"".$imageData["image_alt_text"]."\"/>";
-            
-            // echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'catalog/product' . $product->getImage();
 
             $objectManager =\Magento\Framework\App\ObjectManager::getInstance();
             $helperImport = $objectManager->get('\Magento\Catalog\Helper\Image');
@@ -97,24 +92,39 @@ class ImageConf extends \Magento\Framework\View\Element\Template
                             ->setImageFile($product->getSmallImage()) // image,small_image,thumbnail
                             ->resize(380)
                             ->getUrl();
-            $product_id = $product->getId();
 
-            echo "<img title='".$product->getName()."' src=\"".$imageUrl."\"/>";
-            echo "<p> Product ID: " . $product_id . "</p>";
-            echo "<p> Product Name: " . $product->getName() . "</p>";
-            echo "<p> Product Price: " . number_format((float) $product->getPrice(), 2, '.', '') . "</p>";
-            echo "<p> Product Description: " . $product->getDescription() . "</p>";
+            $product_id = $product->getId();
 
             $RatingOb = $objectManager->create('Magento\Review\Model\Rating')->getEntitySummary($product_id);   
             $ratings = $RatingOb->getSum()/$RatingOb->getCount(); 
 
-            echo "<p> Product Rating(%): " . $ratings. "</p>";
+            $productUrl = $product->getProductUrl();
+            $productName = $product->getName();
+            $productPrice = number_format((float) $product->getPrice(), 2, '.', '') ;
 
-            echo '<a href='.$product->getProductUrl()." target='_blank'>Product</a><br/>";
+            $productCollection[] = [
+                "productRating" => $ratings,
+                "productImageUrl" => $imageUrl,
+                "productUrl" => $productUrl,
+                "productName" => $productName,
+                "productPrice" => $productPrice,
+            ];
+
+            // for display your colection use phtml file
+
+            // echo "<img title='".$product->getName()."' src=\"".$imageUrl."\"/>";
+            // echo "<p> Product ID: " . $product_id . "</p>";
+            // echo "<p> Product Name: " . $product->getName() . "</p>";
+            // echo "<p> Product Price: " . number_format((float) $product->getPrice(), 2, '.', '') . "</p>";
+            // echo "<p> Product Description: " . $product->getDescription() . "</p>";
+            // echo "<p> Product Rating(%): " . $ratings. "</p>";
+            // echo '<a href='.$product->getProductUrl()." target='_blank'>Product</a><br/>";
             
         }
 
-        return $collection;
+
+        // return array->{"product Rating, product imageUrl,product Url, product Name, Product Price"}
+        return $productCollection;
 
     }
 }

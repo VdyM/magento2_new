@@ -1,11 +1,62 @@
 <h1>Nowości</h1>
 <?php
 $productCollection = $block->getProductCollection();
+foreach ($productCollection as $product) {
+            echo "<img title='". $product["productName"]."' src=\"".$product["productImageUrl"]."\"/>";
+            echo "<p> Product Name: " . $product["productName"]. "</p>";
+            echo "<p> Product Price: " . $product["productPrice"] . " zł</p>";
+            // echo "<p> Product Description: " . $product->getDescription() . "</p>";
+            echo "<p> Product Rating(%): " . $product["productRating"]. "</p>";
+            echo '<a href='.$product["productUrl"]." target='_blank'>Product</a><br/>";
+}
 ?>
-<div class="example-rating-summary-7">
-      <span class="label"><span>Rating</span></span>
-      <div class="rating-result" title="40%">
-          <span style="width:40%"><span>40</span></span>
-      </div>
+<div class="swiper-container">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><a href="#">Slide 1</a></div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
 </div>
-<!--    Rating, Image, Name, Price  -->
+
+<!-- STARS -->
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+
+<script>
+     require([
+        'swiper'
+    ], function(Swiper){
+                // my code
+                var swiper = new Swiper('.swiper-container', {
+                // Optional parameters
+                    slidesPerView: "auto",
+                    spaceBetween: 30,
+                    pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    }, 
+                    breakpoints: {
+                        1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 40,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                        470: {
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                        }
+                    }
+                });
+            });
+</script>
+<!--    Rating, Image, Name, Price, Product  -->
