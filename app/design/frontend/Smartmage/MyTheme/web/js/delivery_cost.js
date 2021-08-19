@@ -1,5 +1,7 @@
 window.onload = function(){ 
     // your code 
+    var wrapper = document.getElementById("wrapper");
+
     var poplink = document.getElementById("delivery_link");
 
     var modal = document.getElementById("divModal");
@@ -12,19 +14,24 @@ window.onload = function(){
 
     poplink.onclick = function(){
         modal.style.display = "block";
+        wrapper.style.visibility="visible";
     };
     btn.onclick = function(){
         modal.style.display = "none";
+        wrapper.style.visibility="hidden";
     };
     closelink.onclick = function(){
         modal.style.display = "none";
+        wrapper.style.visibility="hidden";
     };
     close_icon.onclick = function(){
         modal.style.display = "none";
+        wrapper.style.visibility="hidden";
     };
     window.onclick = function(event) {
-        if (event.target == modal) {
+        if (event.target == wrapper) {
           modal.style.display = "none";
+          wrapper.style.visibility="hidden";
         };
     };
 };

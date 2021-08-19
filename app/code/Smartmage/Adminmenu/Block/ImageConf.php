@@ -80,7 +80,7 @@ class ImageConf extends \Magento\Framework\View\Element\Template
         $collection->addAttributeToFilter('visibility', ['in'=> [2,3,4] ] );
         $collection->addAttributeToFilter('qty', ['gt'=> $quantity_product] );
 
-        $collection->setPageSize($limit );
+        $collection->setPageSize($limit);
 
 
         
@@ -97,12 +97,19 @@ class ImageConf extends \Magento\Framework\View\Element\Template
                             ->setImageFile($product->getSmallImage()) // image,small_image,thumbnail
                             ->resize(380)
                             ->getUrl();
-            // echo $imageUrl;
+            $product_id = $product->getId();
 
-            echo "<img title=".$product->getData('name')." src=\"".$imageUrl."\"/>";
-            echo "<p> Product Name: " . $product->getData('name') . "</p>";
+            echo "<img title='".$product->getName()."' src=\"".$imageUrl."\"/>";
+            echo "<p> Product ID: " . $product_id . "</p>";
+            echo "<p> Product Name: " . $product->getName() . "</p>";
             echo "<p> Product Price: " . number_format((float) $product->getPrice(), 2, '.', '') . "</p>";
             echo "<p> Product Description: " . $product->getDescription() . "</p>";
+
+            $RatingOb = $objectManager->create('Magento\Review\Model\Rating')->getEntitySummary($product_id);   
+            $ratings = $RatingOb->getSum()/$RatingOb->getCount(); 
+
+            echo "<p> Product Rating(%): " . $ratings. "</p>";
+
             echo '<a href='.$product->getProductUrl()." target='_blank'>Product</a><br/>";
             
         }

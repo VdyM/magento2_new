@@ -6,10 +6,11 @@
     height: 100%;
     visibility: hidden;
     z-index: 7;
-
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 #divModal{
+    display:none;
     visibility: visible;
     position: absolute;
     top: 10%;
@@ -21,7 +22,6 @@
     border-radius: 4px;
     box-shadow: 3px 3px 12px 0 rgba(0, 0, 0, 0.26);
     background-color: white;
-    // background-color: rgba(0,0,0,0.4);
 }
 
 .Oval {
@@ -33,17 +33,17 @@
     width: 39px;
     height: 39px;
     margin: auto;
+    z-index: 11;
     text-align: center;
-    // padding: 12px 11px 10px;
     border-radius: 50%;
     box-shadow: 0 0 0 2px #fff, inset 0 0 0 2px #d4af7e;
     background-color: #fff;
+    cursor: pointer;
     .Oval-content{
         position: relative;
         width: 17px;
         height: 17px;
         margin: auto;
-
     }
 
     svg {
@@ -53,32 +53,31 @@
 }
 
 #modal-content{
-    position: static;
+    display: grid;
+    position: absolute;
     width: 340px;
     height: 536px;
-    padding: 49px 18px 29px;
     top: 0;
-
- 
 }
 
 #cms-block-content{
     width: 304px;
+    height: 336px;
     margin: 0 auto 10px;
     font-family: Montserrat;
     font-size: 12px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    overflow: scroll;
+    overflow: auto;
     line-height: 1.67;
     letter-spacing: normal;
     color: #353535;
 }
+
 .Szanowny-kliencie {
-    width: 153px;
     height: 19px;
-    margin: 0 151px 16px 0;
+    margin: 49px 151px 16px 18px;
     font-family: Montserrat;
     font-size: 16px;
     font-weight: 500;
@@ -88,20 +87,52 @@
     letter-spacing: normal;
     color: #353535;
 }
+
 .BtnBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 176px;
     height: 42px;
-    margin: auto;
-    padding: 14px 34px 13px 35px;
+    margin: 0 auto;
     border-radius: 21px;
+    cursor: pointer;
     border: solid 1px #7ed321;
+    &:hover{
+        background-color: #7ed321;
+        .BtnTxt {
+            color: #fff;
+        }
+    }
+}
+
+.BtnTxt {
+    justify-items: center;
+    align-items: center;
+    width: 107px;
+    height: 15px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1px;
     text-align: center;
+    color: #7ed321;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently */
 }
 
 .Anuluj {
     width: 47px;
     height: 18px;
-    margin: 15px auto;
+    margin: 15px auto 29px;
     font-family: Montserrat;
     font-size: 14px;
     font-weight: 500;
@@ -111,4 +142,6 @@
     letter-spacing: normal;
     text-align: center;
     color: #787878;
+    text-decoration:underline;
+    cursor: pointer;
 }
