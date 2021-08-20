@@ -1,11 +1,28 @@
-body{
-    background-color: aqua;
+@import "source/variables/_responsive.less";
+@import "source/_responsive.less";
+
+h1{
+    text-align: center;
+}
+.swiper-main{
+    padding: 0 77px 50px;
+    height: 340px;
 }
 .swiper-container {
     width: 100%;
+    height: 100%;
+    padding: 0 30px 50px;
 }
+.fa{
+    font-size: 9px;
+    width: 9px;
+    height: 9px;
+    object-fit: contain;
+    opacity: 0.8;
+}
+
 .swiper-slide {
-    text-align: center;
+    width: 70%;
     font-size: 18px;
     background: #fff;
 
@@ -22,14 +39,150 @@ body{
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
-}
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    img{
+        margin: 0 0 0 5px;
+        display: block;
+        object-fit: cover;
+    }
+    p{
+        text-align: left;
+        width: 48px;
+        height: 13px;
+        margin: 8px 126px 0 0;
+        font-family: Geomanist;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.08;
+        letter-spacing: normal;
+        color: #274060;
+    }
+    .PrductName {
+        
+        margin: auto;
+        font-family: Geomanist;
+        font-size: 13px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.23;
+        letter-spacing: normal;
+        color: #535353;
+    }
 }
 
-.swiper-slide {
-    width: 80%;
+.swiper-pagination{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 147px !important;
+    height: 25px;
+    margin: auto;
+    border-radius: 10px;
+    border: solid 1px #fff;
+    background: #f3f3f3;
+}
+.swiper-pagination-bullet{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+    background: none;
+    opacity: 1;
+
+    &::before{
+        position: absolute;
+        content: "";
+        width: 6px;
+        height: 6px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 50%;
+        background-color: #d8dbe2;
+    }
+}
+.swiper-pagination-bullet-active:after {
+    position: absolute;
+    content: "";
+    border: 2px solid #d8dbe2;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after{
+    content: "";
+}
+@media only screen and (max-width: @screen__m) {
+    .swiper-slide{ 
+        img{
+            width: 135px;
+            height: 135px;
+        }
+    }
+    .swiper-button-prev{
+        display: none;
+        transform: rotate(180deg);
+        left: 10px;
+    }
+    .swiper-button-next{
+        display: none;
+        right: 10px;
+    }
+}
+& when (@media-target = 'desktop'), (@media-target = 'all') {
+    @media only screen and (min-width: @screen__m) and (max-width: (@screen__xl - 1)) {
+        // styles for breakpoint >= 768px and < 1024px
+        .swiper-slide{ 
+            img{
+                width: 180px;
+                height: 180px;
+            }
+        }
+        .swiper-button-prev{
+            display: none;
+            transform: rotate(180deg);
+            left: 10px;
+        }
+        .swiper-button-next{
+            display: none;
+            right: 10px;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .swiper-button{
+        width: 8px;
+        height: 13px;
+        background-image: url("../images/arrowRightSwiper.svg") !important;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+    }
+    .swiper-button-prev{
+        display: flex;
+        transform: rotate(180deg);
+        left: 10px;
+    }
+    .swiper-button-next{
+        display: flex;
+        right: 10px;
+    }
+    .swiper-slide{ 
+        img{
+            width: 180px;
+            height: 180px;
+        }
+    }
+
 }

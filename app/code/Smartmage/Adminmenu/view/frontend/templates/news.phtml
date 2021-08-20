@@ -1,33 +1,42 @@
 <h1>Nowości</h1>
-<?php
-$productCollection = $block->getProductCollection();
-foreach ($productCollection as $product) {
-            echo "<img title='". $product["productName"]."' src=\"".$product["productImageUrl"]."\"/>";
-            echo "<p> Product Name: " . $product["productName"]. "</p>";
-            echo "<p> Product Price: " . $product["productPrice"] . " zł</p>";
-            // echo "<p> Product Description: " . $product->getDescription() . "</p>";
-            echo "<p> Product Rating(%): " . $product["productRating"]. "</p>";
-            echo '<a href='.$product["productUrl"]." target='_blank'>Product</a><br/>";
-}
-?>
-<div class="swiper-container">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide"><a href="#">Slide 1</a></div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
-</div>
 
-<!-- STARS -->
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-<span class="fa fa-star"></span>
+<div class="swiper-main">
+    <div class="swiper-container">
+    <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+            <?php
+                $productCollection = $block->getProductCollection();
+                foreach ($productCollection as $product){
+                    
+                    echo '<div class="swiper-slide">
+                            <div class="swiper-slide-content">
+                                <div class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <a href= '.$product["productUrl"].' target="_blank">
+                                
+                                    <img title='.$product["productName"].' src='. $product["productImageUrl"].' />
+                                    <span class="PrductName"> '.$product["productName"].' </span>
+                                    <p>'.$product["productPrice"].'  zł</p>
+                                </a>
+                            </div>
+                         </div>';
+                }
+            ?>
+    
+        </div>
+            <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-prev swiper-button"></div>
+        <div class="swiper-button-next swiper-button"></div>
+    </div>
+</div>
 
 <script>
      require([
@@ -36,27 +45,40 @@ foreach ($productCollection as $product) {
                 // my code
                 var swiper = new Swiper('.swiper-container', {
                 // Optional parameters
-                    slidesPerView: "auto",
-                    spaceBetween: 30,
+                    slidesPerView: 4,
+                    slidesPerGroup: 4,
+                    spaceBetween: 60,
+                    loop: true,
+
                     pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
+                    
                     }, 
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    mousewheel: true,
+                    keyboard: true,
                     breakpoints: {
                         1024: {
                             slidesPerView: 4,
-                            spaceBetween: 40,
+                            spaceBetween: 60,
                         },
                         768: {
                             slidesPerView: 3,
-                            spaceBetween: 30,
+                            slidesPerGroup: 3,
+                            spaceBetween: 60,
                         },
-                        470: {
+                        360: {
                             slidesPerView: 2,
-                            spaceBetween: 10,
+                            slidesPerGroup: 2,
+                            spaceBetween: 46,
                         }
                     }
                 });
             });
 </script>
+
 <!--    Rating, Image, Name, Price, Product  -->
