@@ -4,15 +4,18 @@
 h1{
     text-align: center;
 }
+
 .swiper-main{
     padding: 0 77px 50px;
     height: 340px;
 }
+
 .swiper-container {
     width: 100%;
     height: 100%;
     padding: 0 30px 50px;
 }
+
 .fa{
     font-size: 9px;
     width: 9px;
@@ -84,6 +87,7 @@ h1{
     border: solid 1px #fff;
     background: #f3f3f3;
 }
+
 .swiper-pagination-bullet{
     position: relative;
     width: 20px;
@@ -91,7 +95,6 @@ h1{
     margin: 0 2px;
     background: none;
     opacity: 1;
-
     &::before{
         position: absolute;
         content: "";
@@ -106,6 +109,7 @@ h1{
         background-color: #d8dbe2;
     }
 }
+
 .swiper-pagination-bullet-active:after {
     position: absolute;
     content: "";
@@ -123,6 +127,7 @@ h1{
 .swiper-button-next::after, .swiper-button-prev::after{
     content: "";
 }
+
 @media only screen and (max-width: @screen__m) {
     .swiper-slide{ 
         img{
@@ -130,16 +135,19 @@ h1{
             height: 135px;
         }
     }
+
     .swiper-button-prev{
         display: none;
         transform: rotate(180deg);
         left: 10px;
     }
+
     .swiper-button-next{
         display: none;
         right: 10px;
     }
 }
+
 & when (@media-target = 'desktop'), (@media-target = 'all') {
     @media only screen and (min-width: @screen__m) and (max-width: (@screen__xl - 1)) {
         // styles for breakpoint >= 768px and < 1024px
@@ -149,17 +157,20 @@ h1{
                 height: 180px;
             }
         }
+
         .swiper-button-prev{
             display: none;
             transform: rotate(180deg);
             left: 10px;
         }
+
         .swiper-button-next{
             display: none;
             right: 10px;
         }
     }
 }
+
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     .swiper-button{
         width: 8px;
@@ -169,15 +180,18 @@ h1{
         background-size: 100% auto;
         background-position: center;
     }
+
     .swiper-button-prev{
         display: flex;
         transform: rotate(180deg);
         left: 10px;
     }
+
     .swiper-button-next{
         display: flex;
         right: 10px;
     }
+
     .swiper-slide{ 
         img{
             width: 180px;
